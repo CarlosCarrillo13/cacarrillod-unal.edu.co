@@ -3,6 +3,7 @@ package com.example.demo.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table
 @Getter
@@ -23,7 +24,7 @@ public class Person {
 
     private String password;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private UserType userType;
 
 }
